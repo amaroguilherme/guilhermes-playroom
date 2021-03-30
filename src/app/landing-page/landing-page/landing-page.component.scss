@@ -1,0 +1,41 @@
+mat-grid-tile {
+  height: 100%;
+}
+
+.tile-1 {
+  background: #FDF5E6;
+}
+
+.tile-2 {
+  background: black;
+}
+
+.fit-parent {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.button-color {
+  background: #FDF5E6;
+}
+
+.text-color-black {
+  color: black;
+}
+
+.text-color-white {
+  color: white;
+}
+
+.info {
+  font-size: 70px;
+  font-family: "Fieldwork Hum Bold";
+  padding: 5%;
+}
+
+.image {
+  position: absolute;
+  width: 35%;
+  top: 0;
+  left: 0;
+}
