@@ -9,17 +9,27 @@
     </mat-grid-tile>
     <mat-grid-tile class="tile-2">
       <div>
-        <app-log-in *ngIf="!isSignUp"></app-log-in>
         <app-sign-up *ngIf="isSignUp"></app-sign-up>
+          <form [formGroup]="logInForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="outline">
+              <mat-label>Username</mat-label>
+              <input class="input-color" matInput formControlName="username" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input class="input-color" matInput formControlName="password" required>
+            </mat-form-field>
+          </form>
         <p>
-          <button class="fit-parent button-color" mat-raised-button (click)="logIn()">
+          <button class="fit-parent button-color" mat-raised-button type="submit" (click)="logIn()">
             <span class="text-color-black">
               Log in
             </span>
           </button>
         </p>
         <p>
-          <button class="fit-parent" mat-stroked-button (click)="signUp()">
+          <button class="fit-parent" mat-stroked-button type="submit" (click)="signUp()">
             <span class="text-color-white">
               Sign up
             </span>

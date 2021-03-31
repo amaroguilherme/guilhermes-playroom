@@ -7,14 +7,22 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule } from '@angular/material';
 import { SignUpComponent } from './sign-up/sign-up/sign-up.component';
-import { LogInComponent } from './log-in/log-in.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MainPageComponent } from './main-page/main-page.component';
+import { HeaderComponent } from './header/header.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     SignUpComponent,
-    LogInComponent
+    MainPageComponent,
+    HeaderComponent,
+    SideNavComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +32,9 @@ import { LogInComponent } from './log-in/log-in.component';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

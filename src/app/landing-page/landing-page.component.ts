@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { EndpointsService } from '../services/endpoints.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -10,7 +12,17 @@ export class LandingPageComponent implements OnInit {
 
   isSignUp = false;
 
-  constructor(private router: Router) { }
+  logInForm = new FormGroup({
+    username: new FormControl('', [
+      Validators.required
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+    ]),
+  });
+
+  constructor(private router: Router,
+              private endpoints: EndpointsService) { }
 
   ngOnInit() {
   }
@@ -21,6 +33,11 @@ export class LandingPageComponent implements OnInit {
 
   logIn() {
     this.isSignUp = false;
+    this.endpoints.logIn(this.logInForm.value).subscribe(data => {
+      if (data['status'] === 200) {
+        console.log(data)
+      }
+    });
   }
 
 }
