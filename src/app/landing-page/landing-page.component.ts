@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  isSignUp = false;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  signUp() {
+    this.isSignUp = true;
+  }
+
+  logIn() {
+    this.isSignUp = false;
   }
 
 }
