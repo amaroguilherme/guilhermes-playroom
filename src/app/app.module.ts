@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
 import { SignUpComponent } from './sign-up/sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -34,7 +34,10 @@ import { ContentComponent } from './content/content.component';
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
