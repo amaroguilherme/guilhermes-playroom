@@ -35,7 +35,7 @@ export class LandingPageComponent implements OnInit {
     this.isSignUp = false;
     this.endpoints.logIn(this.logInForm.value).subscribe(data => {
       if (data['status'] === 200) {
-        this.router.navigate(['/home'])
+        this.router.navigate(['/feed'])
       }
     });
   }

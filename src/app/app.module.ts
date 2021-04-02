@@ -13,6 +13,10 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ContentComponent } from './content/content.component';
+import { FeedComponent } from './feed/feed.component';
+import { GamesComponent } from './games/games.component';
+import { MoviesComponent } from './movies/movies.component';
+import { MusicComponent } from './music/music.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { ContentComponent } from './content/content.component';
     MainPageComponent,
     HeaderComponent,
     SideNavComponent,
-    ContentComponent
+    ContentComponent,
+    FeedComponent,
+    GamesComponent,
+    MoviesComponent,
+    MusicComponent
   ],
   imports: [
     BrowserModule,

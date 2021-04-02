@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-nav',
@@ -7,12 +8,17 @@ import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements AfterViewInit {
 
-  constructor(private elRef: ElementRef) { }
+  constructor(private elRef: ElementRef,
+              private router: Router) { }
 
   ngAfterViewInit() {
     this.elRef.nativeElement.querySelectorAll('mat-pseudo-checkbox').forEach(box => {
       box.style.display = 'none';
     });
+  }
+
+  navigateTo(value) {
+    this.router.navigate(['/' + value])
   }
 
 }

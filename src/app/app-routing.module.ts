@@ -10,7 +10,19 @@ const routes: Routes = [
     component: LandingPageComponent
   },
   {
-    path: 'home',
+    path: 'feed',
+    component: MainPageComponent
+  },
+  {
+    path: 'movies',
+    component: MainPageComponent
+  },
+  {
+    path: 'games',
+    component: MainPageComponent
+  },
+  {
+    path: 'music',
     component: MainPageComponent
   }
 ];
