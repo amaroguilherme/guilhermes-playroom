@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EndpointsService } from '../services/endpoints.service';
 
 @Component({
   selector: 'app-feed',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedComponent implements OnInit {
 
-  constructor() { }
+  feed: any[] = [];
+  loading: boolean;
+
+  constructor(private endpoint: EndpointsService) { }
 
   ngOnInit() {
+    this.loading = true;
+    this.getFeed();
+  }
+
+  getFeed() {
+    this.endpoint.feed().subscribe(data => {
+      this.loading = false;
+      this.feed = data["news"];
+    });
   }
 
 }

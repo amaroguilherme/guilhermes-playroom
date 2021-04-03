@@ -18,4 +18,8 @@ export class EndpointsService {
   logIn(form) {
     return this.http.post(environment.api_url + '/auth', form, {observe: 'response'});
   }
+
+  feed() {
+    return this.http.get(environment.api_url + '/news', {headers});
+  }
 }
