@@ -22,6 +22,7 @@ export class FeedComponent implements OnInit {
     this.endpoint.feed().subscribe(data => {
       this.loading = false;
       this.feed = data["news"];
+      console.log(this.feed)
     });
   }
 

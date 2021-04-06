@@ -1,13 +1,11 @@
-<div class="feed" *ngFor="let article of feed">
-  <mat-card class="card">
-    <mat-card-header>
-      <mat-card-title>{{article.title}}</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image src={{article.image}} alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        {{article.content}}
-      </p>
-    </mat-card-content>
-  </mat-card>
+<div class="container" *ngFor="let article of feed">
+  <h3 class="title">{{article.title}}</h3>
+  <div class="parent-image">
+    <div class="child-image">
+      <img class="image" alt="Photo of a Shiba Inu" src={{article.image}}>
+    </div>
+    <div class="parent-paragraphs">
+      <p *ngFor="let paragraph of article.content" class="paragraphs">{{paragraph}}</p>
+    </div>
+  </div>
 </div>
