@@ -8,13 +8,21 @@
   z-index: 1;
 }
 
+.image {
+  position: absolute;
+  width: 400px;
+  left: 12rem;
+  bottom: 9rem;
+}
+
 .message {
   position: absolute;
+  width: 12rem;
   font-family: "Fieldwork Hum Bold";
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
-  top: 62%;
-  left: 50%;
+  top: 1rem;
+  left: 25rem;
   -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
