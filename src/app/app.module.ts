@@ -19,6 +19,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { MusicComponent } from './music/music.component';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { LoadingInterceptorService } from './services/loading-interceptor.service';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoadingInterceptorService } from './services/loading-interceptor.servic
     GamesComponent,
     MoviesComponent,
     MusicComponent,
-    LoadingComponent
+    LoadingComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,

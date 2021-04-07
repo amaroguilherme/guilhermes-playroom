@@ -24,6 +24,10 @@ const routes: Routes = [
   {
     path: 'music',
     component: MainPageComponent
+  },
+  {
+    path: 'guilherme-resume',
+    component: MainPageComponent
   }
 ];
 
