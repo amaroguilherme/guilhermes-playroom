@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 import { EndpointsService } from '../services/endpoints.service';
 
 @Component({
@@ -22,7 +23,8 @@ export class LandingPageComponent implements OnInit {
   });
 
   constructor(private router: Router,
-              private endpoints: EndpointsService) { }
+              private endpoints: EndpointsService,
+              private auth: AuthService) { }
 
   ngOnInit() {
   }
@@ -33,11 +35,7 @@ export class LandingPageComponent implements OnInit {
 
   logIn() {
     this.isSignUp = false;
-    this.endpoints.logIn(this.logInForm.value).subscribe(data => {
-      if (data['status'] === 200) {
-        this.router.navigate(['/feed'])
-      }
-    });
+    this.auth.login(this.logInForm.value);
   }
 
 }

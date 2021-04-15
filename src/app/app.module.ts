@@ -20,6 +20,8 @@ import { MusicComponent } from './music/music.component';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { LoadingInterceptorService } from './services/loading-interceptor.service';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { JwtHelperService, JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
     MoviesComponent,
     MusicComponent,
     LoadingComponent,
-    AboutMeComponent
+    AboutMeComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,14 +54,24 @@ import { AboutMeComponent } from './about-me/about-me.component';
     MatSidenavModule,
     MatListModule,
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
+    JwtModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptorService,
       multi: true
-    }
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    },
+    { provide: JWT_OPTIONS,
+      useValue: JWT_OPTIONS
+    },
+    JwtHelperService,
   ],
   bootstrap: [AppComponent]
 })
