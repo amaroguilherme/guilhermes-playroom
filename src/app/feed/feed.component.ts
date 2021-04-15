@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { forkJoin } from 'rxjs';
 import { EndpointsService } from '../services/endpoints.service';
 
 @Component({
@@ -19,9 +20,8 @@ export class FeedComponent implements OnInit {
   }
 
   getFeed() {
-    this.endpoint.feed().subscribe(data => {
-      this.loading = false;
-      this.feed = data["news"];
+    forkJoin(this.endpoint.endpointsObservables).subscribe(data => {
+      this.feed = [...data[0]["news"], ...data[1]["news"]];
     });
   }
 
